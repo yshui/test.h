@@ -10,6 +10,7 @@
 
 #if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) ||     \
     defined(__NetBSD__) || defined(__OpenBSD__)
+#define USE_SYSCTL_FOR_ARGS 1
 #include <sys/sysctl.h>
 #include <unistd.h>        // getpid
 #endif
@@ -95,7 +96,7 @@ extern void __attribute__((weak)) (*test_h_unittest_setup)(void);
 /// @param[out] tests_run if not NULL, set to whether tests were run
 static inline void __attribute__((constructor(102))) run_tests(void) {
 	bool should_run = false;
-#ifdef KERN_PROC_ARGS
+#ifdef USE_SYSCTL_FOR_ARGS
 	int mib[] = {
 		CTL_KERN,
 #if defined(__NetBSD__) || defined(__OpenBSD__)
