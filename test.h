@@ -11,6 +11,7 @@
 #if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) ||     \
     defined(__NetBSD__) || defined(__OpenBSD__)
 #define USE_SYSCTL_FOR_ARGS 1
+#include <sys/types.h>
 #include <sys/sysctl.h>
 #include <unistd.h>        // getpid
 #endif
