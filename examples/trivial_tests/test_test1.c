@@ -17,3 +17,7 @@ TEST_CASE(test2) {
 TEST_CASE(test3) {
 	TEST_STREQUAL("Hello", "World");
 }
+
+TEST_CASE(test4) {
+	TEST_STRNEQUAL("Hello World", "Hello", 5);
+}
