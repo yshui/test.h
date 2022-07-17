@@ -13,3 +13,7 @@ TEST_CASE(test1) {
 TEST_CASE(test2) {
 	TEST_TRUE(false);
 }
+
+TEST_CASE(test3) {
+	TEST_STREQUAL("Hello", "World");
+}
