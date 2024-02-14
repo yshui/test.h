@@ -21,3 +21,13 @@ TEST_CASE(test3) {
 TEST_CASE(test4) {
 	TEST_STRNEQUAL("Hello World", "Hello", 5);
 }
+
+TEST_CASE(test5) {
+	char str[5] = { 'H', 'e', 'l', 'l', 'o' };
+	TEST_STREQUAL3(str, "Hello", 5);
+}
+
+TEST_CASE(test6) {
+	char str[5] = { 'H', 'e', 'l', 'l', 'o' };
+	TEST_STREQUAL3(str, "Hello!", 5);
+}
